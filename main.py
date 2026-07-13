@@ -37,7 +37,7 @@ async def health():
 
 @app.get("/")
 async def root():
-    return {"service": "PDF to Text API", "version": "1.1.0"}
+    return {"service": "PDF to Text API", "version": "1.1.0", "related": ["URL Metadata Extractor API"]}
 
 @app.post("/extract", response_model=PDFResult)
 async def extract(file: UploadFile = File(..., description="PDF file")):
