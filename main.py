@@ -12,7 +12,7 @@ import fitz  # PyMuPDF
 
 app = FastAPI(title="PDF to Text API", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health():
     return {"status": "ok"}
 
@@ -34,7 +34,7 @@ def extract_text_from_bytes(data: bytes) -> tuple[int, str]:
     return pages, text
 
 
-@app.get("/health")
+@app.api_route("/health", methods=["GET", "HEAD"])
 async def health(): return {"status": "ok"}
 
 
