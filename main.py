@@ -3,7 +3,7 @@ PDF to Text API
 Extract text from uploaded PDFs or PDF URLs. PyMuPDF backend.
 """
 import io, subprocess, os, time, threading
-from fastapi import Query, UploadFile, File, HTTPException
+from fastapi import FastAPI, Query, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import fitz  # PyMuPDF
